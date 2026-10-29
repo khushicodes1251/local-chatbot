@@ -1,0 +1,13 @@
+# Local embeddings and chat fallback (Ollama HTTP API)
+requests>=2.31,<3
+
+# Vector store for uploaded PDFs
+chromadb>=0.5,<1
+
+# Web UI and PDF text extraction
+flask>=3.0,<4
+pypdf>=5.0,<6
+
+# Walkthrough notebook
+notebook>=7.0,<8
+ipykernel>=6.29,<7

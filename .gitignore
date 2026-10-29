@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.env
+.chroma/
+.chroma_uploads/
+data/uploads/
+*.egg-info/
+.ipynb_checkpoints/
+.cache/

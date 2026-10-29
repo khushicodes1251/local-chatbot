@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document chat</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+  </head>
+  <body>
+    <div class="shell">
+      <aside class="sidebar">
+        <header class="brand">
+          <p class="eyebrow">Local documents</p>
+          <h1>Document chat</h1>
+          <p class="lede">Answers come only from the PDFs you select.</p>
+        </header>
+
+        <label class="dropzone" id="dropzone">
+          <span class="drop-title" id="drop-title">Drop a PDF here</span>
+          <span class="drop-copy">Text-based files only. Scanned pages need OCR, which is not enabled.</span>
+          <span class="upload-button">Upload PDF</span>
+          <input id="file-input" type="file" accept="application/pdf,.pdf" hidden>
+        </label>
+
+        <p class="notice" id="notice" role="status"></p>
+
+        <div class="library-head">
+          <h2>Library</h2>
+          <span id="selected-count">0 selected</span>
+        </div>
+        <p class="empty" id="empty">No PDFs yet.</p>
+        <ul class="library" id="library" hidden></ul>
+      </aside>
+
+      <main class="chat">
+        <section class="welcome" id="welcome">
+          <p class="eyebrow">Ask the files in front of you</p>
+          <h2>Chat with your own documents</h2>
+          <p>
+            Upload a PDF, select it in the library, then ask a question. Answers stay inside those
+            files and cite the filename and page. Nothing is filled in from a built-in knowledge base.
+          </p>
+          <ol>
+            <li>Upload one or more PDFs.</li>
+            <li>Leave checked only the files you want to query.</li>
+            <li>Ask when the status says the file is ready.</li>
+          </ol>
+        </section>
+        <section class="transcript" id="transcript" aria-live="polite" hidden></section>
+
+        <form class="composer" id="composer">
+          <p class="scope" id="scope">Select a ready PDF to enable questions.</p>
+          <div class="composer-row">
+            <input id="question" type="text" placeholder="Select a PDF first" aria-label="Question" disabled>
+            <button id="send" type="submit" disabled>Send</button>
+          </div>
+        </form>
+      </main>
+    </div>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+  </body>
+</html>
